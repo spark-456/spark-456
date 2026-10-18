@@ -10,29 +10,87 @@
 ![Cloud](https://img.shields.io/badge/Cloud-Google%20Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
 ![Now](https://img.shields.io/badge/Now-Tilo-ec4899?style=for-the-badge)
 
+[Featured](#-featured-tilo) · [Projects](#-projects) · [Stack](#-tech-stack)
+
 </div>
+
+---
 
 ## 🌆 Featured: Tilo
 
-> **People describe work; a Director plans it; agent teams run it; the work is shown as a living isometric world.**
+<div align="center">
 
-Tilo is an agentic work platform built for the **Google Cloud AI Builder Cup 2026**. Every side effect goes through an outbox and a deterministic policy engine, risky actions always need a person, and nothing on screen animates without a recorded event.
+### People describe work. A Director plans it. Agent teams run it.
+### The work is shown as a living isometric world.
 
-[![Tilo repo](https://img.shields.io/badge/Tilo-view%20repo-111827?style=for-the-badge&logo=github)](https://github.com/spark-456/tilo)
 [![Live demo](https://img.shields.io/badge/Live%20demo-open-22c55e?style=for-the-badge&logo=firebase&logoColor=white)](https://essential-wares-510320-f0.web.app)
+[![Tilo repo](https://img.shields.io/badge/Source-spark--456%2Ftilo-111827?style=for-the-badge&logo=github)](https://github.com/spark-456/tilo)
+![Cup](https://img.shields.io/badge/Google%20Cloud-AI%20Builder%20Cup%202026-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
+
+<img src="assets/tilo-worlds.jpg" alt="Tilo: every job gets its own little isometric city" width="92%"/>
+
+</div>
+
+Most AI tools give you a chat box and a wall of text. **Tilo turns one sentence into a priced plan, runs it with a team of specialised helpers, and draws the work as a tiny city** you can read at a glance. Helpers walk between buildings as they work, and anything important stops at a gate until a person says yes.
+
+| 🗣️ Plain words in | 🧾 Price first | 🏙️ A world you can read | 🛡️ You stay in charge |
+|---|---|---|---|
+| One sentence, plus files if they help | The plan and cost are shown before anything starts | Story and Trace lenses on every job | Risky steps wait for your approval |
+
+```mermaid
+flowchart LR
+    A["Describe the work"] --> B["Director plans<br/>and prices it"]
+    B --> C{"You approve"}
+    C --> D["Agent teams run it"]
+    D --> E{"Risky step?"}
+    E -- "yes" --> F["A person approves"]
+    E -- "no" --> G["Outbox and policy engine"]
+    F --> G
+    G --> H["Result, shown as a world"]
+```
+
+<details>
+<summary><b>🔬 Under the hood</b></summary>
+
+<br/>
+
+- **Google ADK agents** behind a providers layer, so models are configuration, not code
+- **Deterministic policy engine and outbox**: every side effect is checked by rules, never by a model
+- **Honesty rules**: nothing on screen animates without a recorded event
+- **FastAPI services on Cloud Run** (`asia-southeast1`), Firestore, Pub/Sub, web on Firebase Hosting
+- **React and PixiJS v8** for the isometric world, with a mobile layout
+- **7 services, 10 shared packages and a written architecture decision record trail**, all built around JSON Schema contracts
+
+<p align="center"><img src="assets/tilo-mobile.png" alt="Tilo on a phone" width="240"/></p>
+
+</details>
+
+---
 
 ## 🚀 Projects
 
 | | Project | What it is | Stack |
 |---|---|---|---|
-| 🌆 | [**tilo**](https://github.com/spark-456/tilo) | Agentic work platform with a living isometric world | ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square) ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=flat-square) ![Cloud Run](https://img.shields.io/badge/-Cloud%20Run-4285F4?logo=googlecloud&logoColor=white&style=flat-square) |
 | 🤫 | [**hush-stories**](https://github.com/spark-456/hush-stories) | Interactive branching stories with an AI director and adaptive score | ![Next.js](https://img.shields.io/badge/-Next.js-000000?logo=nextdotjs&logoColor=white&style=flat-square) ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=flat-square) |
 | 🏦 | [**credex-ai-suite**](https://github.com/spark-456/credex-ai-suite) | Forensic AI credit analysis with traceable memoranda for Indian banks | ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=flat-square) ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=flat-square) |
 | 🌾 | [**krishi-sakhi**](https://github.com/spark-456/krishi-sakhi) | Region-aware AI farming companion for farmers | ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square) ![Jupyter](https://img.shields.io/badge/-Jupyter-F37626?logo=jupyter&logoColor=white&style=flat-square) |
 | 📚 | [**MellowTime**](https://github.com/spark-456/MellowTime) | AI note sharing and summarisation for students | ![Flask](https://img.shields.io/badge/-Flask-000000?logo=flask&logoColor=white&style=flat-square) ![AWS](https://img.shields.io/badge/-AWS-FF9900?logo=amazonaws&logoColor=white&style=flat-square) |
 | 🗓️ | [**mellow-schedules-friends**](https://github.com/spark-456/mellow-schedules-friends) | Time management with social scheduling | ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=flat-square) ![Tailwind](https://img.shields.io/badge/-Tailwind-06B6D4?logo=tailwindcss&logoColor=white&style=flat-square) |
-| 🧠 | [**GenAI**](https://github.com/spark-456/GenAI) | My hands-on roadmap to LLMs: tokens, embeddings, transformers, prompts | ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square) ![PyTorch](https://img.shields.io/badge/-PyTorch-EE4C2C?logo=pytorch&logoColor=white&style=flat-square) |
-| 🎧 | [**Bluetooth_Simulator**](https://github.com/spark-456/Bluetooth_Simulator) | Streamlit demo of encrypted signal modulation between phone and earphones | ![Streamlit](https://img.shields.io/badge/-Streamlit-FF4B4B?logo=streamlit&logoColor=white&style=flat-square) |
+
+<details>
+<summary><b>More experiments and learning projects</b></summary>
+
+<br/>
+
+| | Project | What it is |
+|---|---|---|
+| 🧠 | [**GenAI**](https://github.com/spark-456/GenAI) | My hands-on roadmap to LLMs: tokens, embeddings, transformers, prompts |
+| 🎧 | [**Bluetooth_Simulator**](https://github.com/spark-456/Bluetooth_Simulator) | Streamlit demo of encrypted signal modulation between phone and earphones |
+| 🎨 | [**ExpWebsite**](https://github.com/spark-456/ExpWebsite) | A playground of modern UI/UX patterns |
+
+</details>
+
+---
 
 ## 🧰 Tech stack
 
@@ -40,12 +98,16 @@ Tilo is an agentic work platform built for the **Google Cloud AI Builder Cup 202
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge)
 ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=for-the-badge)
 ![Next.js](https://img.shields.io/badge/-Next.js-000000?logo=nextdotjs&logoColor=white&style=for-the-badge)
+![FastAPI](https://img.shields.io/badge/-FastAPI-009688?logo=fastapi&logoColor=white&style=for-the-badge)
 ![Google Cloud](https://img.shields.io/badge/-Google%20Cloud-4285F4?logo=googlecloud&logoColor=white&style=for-the-badge)
 ![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?logo=firebase&logoColor=black&style=for-the-badge)
 ![AWS](https://img.shields.io/badge/-AWS-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
 ![Flask](https://img.shields.io/badge/-Flask-000000?logo=flask&logoColor=white&style=for-the-badge)
 ![Tailwind](https://img.shields.io/badge/-Tailwind-06B6D4?logo=tailwindcss&logoColor=white&style=for-the-badge)
+![PyTorch](https://img.shields.io/badge/-PyTorch-EE4C2C?logo=pytorch&logoColor=white&style=for-the-badge)
 
-## 📫 Find me
+<div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-spark--456-181717?style=for-the-badge&logo=github)](https://github.com/spark-456)
+
+</div>
