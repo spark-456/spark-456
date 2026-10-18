@@ -20,50 +20,16 @@
 
 <div align="center">
 
-### People describe work. A Director plans it. Agent teams run it.
-### The work is shown as a living isometric world.
+<img src="assets/tilo-worlds.jpg" alt="Tilo: every job gets its own little isometric city" width="88%"/>
+
+**People describe work. A Director plans it. Agent teams run it. The work is shown as a living isometric world.**
 
 [![Live demo](https://img.shields.io/badge/Live%20demo-open-22c55e?style=for-the-badge&logo=firebase&logoColor=white)](https://essential-wares-510320-f0.web.app)
-[![Tilo repo](https://img.shields.io/badge/Source-spark--456%2Ftilo-111827?style=for-the-badge&logo=github)](https://github.com/spark-456/tilo)
-![Cup](https://img.shields.io/badge/Google%20Cloud-AI%20Builder%20Cup%202026-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
-
-<img src="assets/tilo-worlds.jpg" alt="Tilo: every job gets its own little isometric city" width="92%"/>
+[![Read the full story](https://img.shields.io/badge/Full%20write--up-spark--456%2Ftilo-111827?style=for-the-badge&logo=github)](https://github.com/spark-456/tilo#readme)
 
 </div>
 
-Most AI tools give you a chat box and a wall of text. **Tilo turns one sentence into a priced plan, runs it with a team of specialised helpers, and draws the work as a tiny city** you can read at a glance. Helpers walk between buildings as they work, and anything important stops at a gate until a person says yes.
-
-| 🗣️ Plain words in | 🧾 Price first | 🏙️ A world you can read | 🛡️ You stay in charge |
-|---|---|---|---|
-| One sentence, plus files if they help | The plan and cost are shown before anything starts | Story and Trace lenses on every job | Risky steps wait for your approval |
-
-```mermaid
-flowchart LR
-    A["Describe the work"] --> B["Director plans<br/>and prices it"]
-    B --> C{"You approve"}
-    C --> D["Agent teams run it"]
-    D --> E{"Risky step?"}
-    E -- "yes" --> F["A person approves"]
-    E -- "no" --> G["Outbox and policy engine"]
-    F --> G
-    G --> H["Result, shown as a world"]
-```
-
-<details>
-<summary><b>🔬 Under the hood</b></summary>
-
-<br/>
-
-- **Google ADK agents** behind a providers layer, so models are configuration, not code
-- **Deterministic policy engine and outbox**: every side effect is checked by rules, never by a model
-- **Honesty rules**: nothing on screen animates without a recorded event
-- **FastAPI services on Cloud Run** (`asia-southeast1`), Firestore, Pub/Sub, web on Firebase Hosting
-- **React and PixiJS v8** for the isometric world, with a mobile layout
-- **7 services, 10 shared packages and a written architecture decision record trail**, all built around JSON Schema contracts
-
-<p align="center"><img src="assets/tilo-mobile.png" alt="Tilo on a phone" width="240"/></p>
-
-</details>
+Built for the **Google Cloud AI Builder Cup 2026**. Architecture, safety model and a screenshot tour are in the repo README.
 
 ---
 
